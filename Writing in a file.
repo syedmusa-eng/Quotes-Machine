@@ -1,3 +1,10 @@
+//printing the size of the data.
 quotes.shape
 
+//saving the data into another file.
 quotes.to_csv('quotes.csv', index=None)
+
+
+//creating another file reference and reading a file quotes_test.csv.
+quotes_test = pd.read_csv('quotes_test.csv')
+quotes_test.head()
