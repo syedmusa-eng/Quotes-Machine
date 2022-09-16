@@ -1,0 +1,3 @@
+quotes.shape
+
+quotes.to_csv('quotes.csv', index=None)
