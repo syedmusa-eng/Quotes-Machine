@@ -1,0 +1,5 @@
+import matplotlib
+import matplotlib.pyplot as plt
+plt.plot(sorted(all_compounds))
+plt.title('Overall sentiment in quote stash')
+plt.grid()
