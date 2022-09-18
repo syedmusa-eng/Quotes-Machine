@@ -1,0 +1,2 @@
+quotes['sentiment_score'] = all_compounds
+quotes.head()
