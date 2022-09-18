@@ -1,0 +1,40 @@
+
+#Loading the quote stash and assignign the index score
+
+import pandas as pd
+import numpy as np
+from random import randrange
+
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+
+#declaring a global variable
+quotes = None;
+
+def prepare_sentiment_quote_stash(quote_stash_path):
+    global quotes
+    
+    #loading the quote stash
+    quotes = pd.read_csv(quote_stash_path)
+    
+    sid = SentimentIntensityAnalyzer()
+    
+    all_compounds = []
+    for sentence in quotes['quote']:
+        ss = sid.polarity_scores(sentence)
+        for k in sorted(ss):
+            if k == 'compound':
+                all_compounds.append(ss[k])
+                
+                
+    #adding sentiment to the data
+    quotes['sentiment_score'] = all_compounds
+    
+    #creating ladder index
+    quotes = quotes.sort_values('sentiment_score')
+    quotes['index'] = [ix for ix in range(0, len(quotes))]
+    
+    return quotes
+
+
+prepare_sentiment_quote_stash('quotes.csv')
+quotes.head()
