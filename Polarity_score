@@ -1,0 +1,30 @@
+import pandas as pd
+
+import nltk
+nltk.download('vader_lexicon')
+
+quotes = pd.read_csv('quotes.csv')
+print(quotes.shape)
+quotes.head()
+
+for sentence in quotes['quote']:
+    print(sentence)
+    break
+    
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+sid = SentimentIntensityAnalyzer()
+
+all_compounds = []
+for sentence in quotes['quote']:
+    print(sentence)
+    ss = sid.polarity_scores(sentence)
+    for k in sorted(ss):
+        print('{0}: {1}, '.format(k, ss[k]), end='')
+        print()
+        
+        if k == 'compound':
+            all_compounds.append(ss[k])
+            
+
+all_compounds[0:5]
+            
