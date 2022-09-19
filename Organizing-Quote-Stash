@@ -1,4 +1,4 @@
-
+#DAY 3/100
 #Loading the quote stash and assignign the index score
 
 import pandas as pd
