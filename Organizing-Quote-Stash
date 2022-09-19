@@ -35,6 +35,6 @@ def prepare_sentiment_quote_stash(quote_stash_path):
     
     return quotes
 
-
+#Calling the method and giving it the quotes file.
 prepare_sentiment_quote_stash('quotes.csv')
 quotes.head()
