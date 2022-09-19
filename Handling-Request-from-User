@@ -1,0 +1,62 @@
+#Handling the user requests now
+#Setting the max value to the highest indexed quote...
+max_index_value = np.max(quotes['index'].values)
+
+
+#Creating a method to generate quotes for the user on demand
+def give_a_quote(direction = None, current_index = None):
+    rand_index = randrange(max_index_value)
+    survival = None
+    motivational = None
+
+    #new session visit
+    if current_index is None:
+        motivational = current_index
+        
+    if direction == 'motivational':
+        motivational = current_index
+    else:
+        survival = current_index
+        
+    #IF THE USER HAS REQUESTED  A SURVIVAL MODE QUOTE...    
+    if survival is not None:
+        current_index = rand_index
+        
+        try:
+            current_index = int(survival)
+        except ValueError:
+            #somebody is gaming the system
+            current_index = rand_index
+            
+        if current_index > 0:
+            #try for a lesse value from a current one
+            rand_index = randrange(0, current_index)
+            print('survival')
+        else:
+            #already at lowest point
+            rand_index = rand_index
+    
+    #IF THE USER HAS REQUESTED A MOTIVATIONAL MODE QUOTE...
+    elif motivational is not None:
+        
+        try:
+            current_index = int(motivational)
+        except ValueError:
+            #somebody is gaming the system
+            current_index = rand_index
+            
+        if current_index < max_index_value -1:
+            rand_index = randrange(current_index, max_index_value)
+            print('motivational')
+        else:
+            rand_index = rand_index
+            
+    else:
+        #grab a random value
+        rand_index = rand_index
+    
+    return (rand_index)
+
+#CALLING THE METHOD BY REQUESTING A MOTIVATIONAL QUOTE...
+give_a_quote('motivational', 20)
+    
