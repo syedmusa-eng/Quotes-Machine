@@ -1,0 +1,15 @@
+#Already Saved the amended “main.py” script which should look like this after the modification of the last part of the code:
+
+from flask import Flask, escape, request
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    name = request.args.get("name", "World")
+    return f'Hello, {escape(name)}!'
+
+
+#ADDED PART OF THE CODE TO RUN THE PROGRAM IN A BETTER WAY....
+if __name__=='__main__':
+    app.run(debug=True)
