@@ -2,7 +2,6 @@
 #Setting the max value to the highest indexed quote...
 max_index_value = np.max(quotes['index'].values)
 
-
 #Creating a method to generate quotes for the user on demand
 def give_a_quote(direction = None, current_index = None):
     rand_index = randrange(max_index_value)
@@ -18,7 +17,7 @@ def give_a_quote(direction = None, current_index = None):
     else:
         survival = current_index
         
-    #IF THE USER HAS REQUESTED  A SURVIVAL MODE QUOTE...    
+    #IF THE USER HAS REQUESTED A SURVIVAL MODE QUOTE...    
     if survival is not None:
         current_index = rand_index
         
