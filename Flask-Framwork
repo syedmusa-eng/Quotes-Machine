@@ -1,0 +1,26 @@
+#LEARNING HOW TO USE FLASK FRAMWORK
+#FLASK IS A WEB FRAMEWORK WRITTEN IN PYTHON...
+
+#TO INSTALL FLASK IN OC FROM CMD LINE...
+pip install -U Flask 
+
+
+#LEARNING HOW TO CREATE A MAIN.PY EXECUTABLE AND HOW TO RUN IT ON A LOACAL WEB SERVER...
+from flask import Flask, escape, request
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    name = request.args.get("name", "World")
+    return f'Hello, {escape(name)}!'
+    
+    
+#OPEN THE CMD LINE AND EXECUTE THE MAIN.PY...
+set FLASK_APP=main.py flask run    
+OR
+#IN THE CMD LINE MOVE INTO THE DIRECTORY WHERE THE MAIN.PY FILE IS AND TYPE COMMAND:
+python main.py
+
+
+#THIS WILL CREATE A LOCAL WEB SERVER, COPY AND PASTE IT TO THE WEB BROWSER AND YOU WILL SEE THE main.py program running on the web page.
