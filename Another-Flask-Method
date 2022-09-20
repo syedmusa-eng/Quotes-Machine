@@ -13,3 +13,7 @@ def hello():
 #ADDED PART OF THE CODE TO RUN THE PROGRAM IN A BETTER WAY....
 if __name__=='__main__':
     app.run(debug=True)
+    
+    
+#Go back to your command/terminal window pointing to the amended script and enter the shorter version:
+python3 main.py    
