@@ -1,0 +1,7 @@
+#DEMO HTML CODE TO MAKE SURE IN OUR MAIN.PY FILE THE CODE IS CALLING THE HTML CODE AND IT IS WORKING...
+<HTML>
+    <BODY>
+        <H1>Hello, universal time is: {{utc_time}}</H1>
+        <IMG src="static/images/640px-World_Time_Zones_Map.png" />
+    </BODY>
+</HTML>
