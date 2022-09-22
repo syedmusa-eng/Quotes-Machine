@@ -1,0 +1,14 @@
+#LOGICAL STRUCTURE OF THE APP IN PYTHONANYWHERE...
+
+
+quote_sentiment_machine 
+    ├── flask_app.py
+    ├── quotes.csv
+    ├── templates
+            └── quote.html
+    └──  static
+            └── images
+                ├── hand.png
+                ├── header-inspire-me.png
+                ├── moon.png
+                └── sun.png
