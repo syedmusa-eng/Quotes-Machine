@@ -94,7 +94,7 @@ def gimme_a_quote(direction = None, current_index = None, max_index_value = 0):
 
     return (rand_index)
 
-
+#THIS METHOD IS CREATED TO SHOW THE REQUESTED QUOTE ON THE WEB PAGE...
 @app.route("/")
 def quote_me():
     quote_stash_tmp = quotes.copy()
