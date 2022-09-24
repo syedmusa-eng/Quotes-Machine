@@ -43,7 +43,7 @@ def prepare_sentiment_quote_stash():
     quotes['index'] = [ix for ix in range(0, len(quotes))]
 
 
-
+#THE METHOD THAT HANDLES THE REQUEST FROM THE USER AND RETURNS AN INDEX FOR THE NEXT QUOTE TO BE SHOWN...
 def gimme_a_quote(direction = None, current_index = None, max_index_value = 0):
     rand_index = randrange(max_index_value)
     darker = None
