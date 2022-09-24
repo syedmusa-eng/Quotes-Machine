@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # declare global variable
 quotes = None
 
-
+#THIS IS THE 1ST STEP, WHEN WE OPEN THE WEB SERVER, THIS FUNCTION GETS CALLED...
 @app.before_request
 def prepare_sentiment_quote_stash():
     global quotes
