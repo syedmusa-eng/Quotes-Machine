@@ -13,4 +13,5 @@ if __name__=='__main__':
     
     
 #Go back to your command/terminal window pointing to the amended script and enter the shorter version:
+#CMD PROMPT COMMANDS CHANGE WITH OS...
 python3 main.py    
